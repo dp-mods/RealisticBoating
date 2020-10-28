@@ -42,3 +42,36 @@ Citizen.CreateThread(function()
     end 
 
 end)
+
+
+
+Citizen.CreateThread(function()
+
+    while true do
+
+        Citizen.Wait(0)
+
+        local currentvehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+        local lastvehicle = GetVehiclePedIsIn(GetPlayerPed(-1), true)
+        local currentvehicleClass = GetVehicleClass(currentvehicle)
+        local lastvehicleClass = GetVehicleClass(lastvehicle)
+
+        if currentvehicleClass == 14 then
+
+
+             SetBoatSinksWhenWrecked(currentvehicle, true)
+        
+        elseif lastvehicleClass == 14 then
+
+      
+            SetBoatSinksWhenWrecked(lastvehicle, true)
+
+        else
+
+            Citizen.Wait(10000)
+
+        end
+
+    end
+
+end)
