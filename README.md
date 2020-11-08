@@ -9,6 +9,8 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 
 # Work In Progress Features
 
+- Boat purchase & storage
+- Trailer support
 - Distress system
 - Hypothermia
 - Water based activites and jobs
