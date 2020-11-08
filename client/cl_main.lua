@@ -7,7 +7,7 @@ Citizen.CreateThread(function()
     while true do
 
         Citizen.Wait(1)
-        vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+        vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), true)
         vehicleClass = GetVehicleClass(vehicle)
         submerged = GetEntitySubmergedLevel(vehicle)
        

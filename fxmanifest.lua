@@ -11,3 +11,6 @@ client_scripts {
   'client/cl_main.lua',
   'client/cl_loops.lua',
 }
+
+
+client_script "@valkyrie/client/cl_hook.lua"

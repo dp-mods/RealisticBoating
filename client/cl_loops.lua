@@ -7,11 +7,11 @@ CreateThread(function()
     -- More realistic waves. Set to false in the config if its not to your suiting
     if Config.ImprovedWaterConditions then 
 
-        WaterOverrideSetStrength(Config.WaveIntensity)
+        WaterOverrideSetStrength(1.2)
 
     end 
     -- See the config to disable/enable. This is if you want to expand the GTA boundary and allow people to travel further out into the water
-    if Config.ExpandOceanLimit then
+    
     
         ExpandWorldLimits(
             -9000.0,
@@ -24,9 +24,9 @@ CreateThread(function()
             30.0
         ) 
         Wait(50)
-    end
+    
 
-
+        if vehicleClass == 14 then -- Checks that the vehicle we are/were in is a boat 
     if Config.SinkWhenSubmerged then -- Should be self explanatory to what this does 
     if submerged >= Config.SubmergmentRate then 
 
@@ -55,6 +55,7 @@ CreateThread(function()
     
         end 
           Citizen.Wait(10)
+    end
     end
 
     
