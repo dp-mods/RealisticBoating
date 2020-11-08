@@ -7,71 +7,118 @@ Citizen.CreateThread(function()
     while true do
 
 
-        Citizen.Wait(0)
+        Citizen.Wait(5)
         local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
         local vehicleClass = GetVehicleClass(vehicle)
 
 
-        if vehicleClass == 14 then 
+        if vehicleClass == 14 or vehicleClass == 18 then -- Checks that the vehicle class is a boat
       
-            if IsControlJustPressed(1, 74) and anchored == false then 
+            if IsEntityInWater(vehicle) then -- Checks if vehicles in water
+			    if IsControlJustPressed(1, 74) and anchored == false then 
+				local speed = GetVehicleDashboardSpeed(vehicle)
+				
+				if speed < 6 then 
 
-                SetForcedBoatLocationWhenAnchored(vehicle, true)
-                SetBoatAnchor(vehicle, true)
-                SetBoatFrozenWhenAnchored(vehicle, true)
+					-- If it is a boat and the speed is less than 6 and the anchor isn't set then set it
+			 
+					print('Lowering the anchor')
+
+					exports.pNotify:SendNotification({
+						text = "<b style='color:yellow'>Loweing the anchor</b><br />",
+						type = "success",
+						queue = "error",
+						timeout = 5000,
+						layout = "bottomRight",
+						sounds = {
+							sources = {"sound-example.wav"}, -- For sounds to work, you place your sound in the html folder and then add it to the files array in the __resource.lua file.
+							volume = 0.2,
+							conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
+						}
+					})
+					Citizen.Wait(5000) -- Added a wait time to signify that it takes 5 seconds to lower the anchor
+                SetBoatAnchor(vehicle, true) -- Don't touch
+                SetBoatFrozenWhenAnchored(vehicle, true) -- Don't touch
          
-                 -- You could trigger a notification here
+                exports.pNotify:SendNotification({
+                    text = "<b style='color:green'>Anchor Lowered!</b><br />",
+                    type = "success",
+                    queue = "error",
+                    timeout = 2000,
+                    layout = "bottomRight",
+                    sounds = {
+                        sources = {"sound-example.wav"}, -- For sounds to work, you place your sound in the html folder and then add it to the files array in the __resource.lua file.
+                        volume = 0.2,
+                        conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
+                    }
+                })
             
-                anchored = true
+				anchored = true -- Remember client side that we anchored the boat
+
+				else 
+						-- If we can't anchor, it's because we're moving too quickly (Above 6)
+					exports.pNotify:SendNotification({
+						text = "<b style='color:red'>You can only do that while stationary</b><br />",
+						type = "error",
+						queue = "error",
+						timeout = 5000,
+						layout = "bottomRight",
+						sounds = {
+							sources = {"sound-example.wav"}, -- For sounds to work, you place your sound in the html folder and then add it to the files array in the __resource.lua file.
+							volume = 0.2,
+							conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
+						}
+					})
+				
+				end 
             
 
             elseif IsControlJustPressed(1, 74) and anchored == true then
 
+				print('Raising the anchor')
+				exports.pNotify:SendNotification({
+                    text = "<b style='color:green'>Raising the anchor</b><br />",
+                    type = "success",
+                    queue = "error",
+                    timeout = 5000,
+                    layout = "bottomRight",
+                    sounds = {
+                        sources = {"sound-example.wav"}, -- For sounds to work, you place your sound in the html folder and then add it to the files array in the __resource.lua file.
+                        volume = 0.2,
+                        conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
+                    }
+                })
+                Citizen.Wait(5000)
+                exports.pNotify:SendNotification({
+                    text = "<b style='color:green'>Anchor raised!</b><br />",
+                    type = "success",
+                    queue = "error",
+                    timeout = 2000,
+                    layout = "bottomRight",
+                    sounds = {
+                        sources = {"sound-example.wav"}, -- For sounds to work, you place your sound in the html folder and then add it to the files array in the __resource.lua file.
+                        volume = 0.2,
+                        conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
+                    }
+                })
                 SetBoatAnchor(vehicle, false)
-                SetForcedBoatLocationWhenAnchored(vehicle, false)
                 SetBoatFrozenWhenAnchored(vehicle, false)
 
-           -- You could trigger a notification here
 
                 anchored = false
+                
+            else 
+
+				Citizen.Wait(10)
+				
 
             end
+
+        end 
       
-        end
+	end
+		
 
     end 
-
-end)
-
-
-
-Citizen.CreateThread(function()
-
-    while true do
-
-        Citizen.Wait(0)
-
-        local currentvehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-        local lastvehicle = GetVehiclePedIsIn(GetPlayerPed(-1), true)
-        local currentvehicleClass = GetVehicleClass(currentvehicle)
-        local lastvehicleClass = GetVehicleClass(lastvehicle)
-
-        if currentvehicleClass == 14 then
-
-
-             SetBoatSinksWhenWrecked(currentvehicle, true)
-        
-        elseif lastvehicleClass == 14 then
-
-      
-            SetBoatSinksWhenWrecked(lastvehicle, true)
-
-        else
-
-            Citizen.Wait(10000)
-
-        end
-
-    end
 
 end)
