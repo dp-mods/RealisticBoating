@@ -1,4 +1,4 @@
-anchored = true -- The assumption is if a boat is idle in the water, it'll most likely be anchored if it has no operator
+anchored = false
 
 
 Citizen.CreateThread(function()
