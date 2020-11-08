@@ -6,5 +6,7 @@ description 'Realism added to boating in FiveM'
 version '1.0.0'
 
 
-client_script 'client/cl_main.lua',
-
+client_scripts {
+  'config.lua'
+  'client/cl_main.lua',
+}
