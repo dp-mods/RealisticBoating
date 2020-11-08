@@ -7,6 +7,12 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 - pNotify (Optional)
 
 
+# Features
+
+- Boat Anchor
+- Realistic Water Conditions
+- Sinking Boats when heavily damaged/submerged
+
 # Work In Progress Features
 
 - Distress system
