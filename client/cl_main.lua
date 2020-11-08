@@ -117,7 +117,7 @@ Citizen.CreateThread(function()
                 
             else 
 
-		Citizen.Wait(10)
+		Citizen.Wait(1)
 				
 
             end
