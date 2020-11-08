@@ -9,6 +9,7 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 
 # Work In Progress Features
 
+- Move certain functions to server side
 - Distress system
 - Hypothermia
 - Water based activites and jobs
