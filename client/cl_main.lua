@@ -7,16 +7,17 @@ Citizen.CreateThread(function()
     while true do
 
         Citizen.Wait(1)
-        local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-        local vehicleClass = GetVehicleClass(vehicle)
-
-
+        vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+        vehicleClass = GetVehicleClass(vehicle)
+        submerged = GetEntitySubmergedLevel(vehicle)
+       
+       
         if vehicleClass == 14 or vehicleClass == 18 then -- Checks that the vehicle class is a boat, also checks if emergency vehicle - handy if you're using addon LEO boats etc
-      
+
             if IsEntityInWater(vehicle) then -- Checks if vehicles in water. Prevents a bug were notification prompts are displayed in land vehicles
 			    if IsControlJustPressed(1, 74) and anchored == false then 
-				local speed = GetVehicleDashboardSpeed(vehicle) -- Checks the current vehicle speed
-				
+				 -- Checks the current vehicle speed
+				 speed = GetVehicleDashboardSpeed(vehicle)
 				if speed < 6 then 
 
 					-- If it is a boat and the speed is less than 6 and the anchor isn't set then set it
