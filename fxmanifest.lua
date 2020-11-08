@@ -7,6 +7,6 @@ version '1.0.0'
 
 
 client_scripts {
-  'config.lua'
+  'config.lua',
   'client/cl_main.lua',
 }
