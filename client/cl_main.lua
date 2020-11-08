@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
 					-- If it is a boat and the speed is less than 6 and the anchor isn't set then set it
 			 
 					print('Lowering the anchor')
-
+				if Config.UsePNotify then
 					exports.pNotify:SendNotification({
 						text = "<b style='color:yellow'>Loweing the anchor</b><br />",
 						type = "success",
@@ -36,6 +36,7 @@ Citizen.CreateThread(function()
 							conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
 						}
 					})
+				end
 					Citizen.Wait(5000) -- Added a wait time to signify that it takes 5 seconds to lower the anchor
                 SetBoatAnchor(vehicle, true) -- Don't touch
                 SetBoatFrozenWhenAnchored(vehicle, true) -- Don't touch
@@ -57,6 +58,7 @@ Citizen.CreateThread(function()
 
 				else 
 						-- If we can't anchor, it's because we're moving too quickly (Above 6)
+							if Config.UsePNotify then
 					exports.pNotify:SendNotification({
 						text = "<b style='color:red'>You can only do that while stationary</b><br />",
 						type = "error",
@@ -69,6 +71,8 @@ Citizen.CreateThread(function()
 							conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
 						}
 					})
+								
+				end
 				
 				end 
             
@@ -76,6 +80,7 @@ Citizen.CreateThread(function()
             elseif IsControlJustPressed(1, 74) and anchored == true then
 
 				print('Raising the anchor')
+			if Config.UsePNotify then
 				exports.pNotify:SendNotification({
                     text = "<b style='color:green'>Raising the anchor</b><br />",
                     type = "success",
@@ -88,7 +93,9 @@ Citizen.CreateThread(function()
                         conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
                     }
                 })
+		
                 Citizen.Wait(5000)
+						
                 exports.pNotify:SendNotification({
                     text = "<b style='color:green'>Anchor raised!</b><br />",
                     type = "success",
@@ -101,6 +108,7 @@ Citizen.CreateThread(function()
                         conditions = {"docVisible"} -- This means it will play the sound when the notification becomes visible.
                     }
                 })
+		end
                 SetBoatAnchor(vehicle, false)
                 SetBoatFrozenWhenAnchored(vehicle, false)
 
