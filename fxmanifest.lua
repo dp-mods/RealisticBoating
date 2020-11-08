@@ -8,5 +8,7 @@ version '1.0.0'
 
 client_scripts {
   'config.lua',
+  'client/cl_functions.lua',
+  'client/cl_loops.lua',
   'client/cl_main.lua',
 }
