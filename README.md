@@ -1,3 +1,10 @@
+# [WIP] Work In Progress
+
+It's advised you don't download this script yet if you don't know  what you're doing. As it's a WIP - it may contain bugs and some features may not be fully functioning or implemented yet.
+
+I still need to optmize the code structure and move some functions to server side - so good things come to those who wait!
+
+
 # RealisticBoating
 [WIP] A script aimed at overhauling boating mechanics in FiveM to be more feature rich and realistic. This is an ongoing Work In Progess [WIP] and any contribution is greatly appreciated!
 
