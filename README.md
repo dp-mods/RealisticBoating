@@ -22,6 +22,7 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 
 # Work In Progress Features
 
+- Boat & Trailer Purchase & Storage
 - Distress system
 - Hypothermia System Based on Time & Weather Conditions
 - Water based activites and jobs
