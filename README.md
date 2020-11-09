@@ -23,8 +23,7 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 # Work In Progress Features
 
 - Distress system
-- Hypothermia
+- Hypothermia System Based on Time & Weather Conditions
 - Water based activites and jobs
-- Full submergment resulting in sinking of the vessel
 - Weather conditions affecting wave height and intensity
 - Tidal system
