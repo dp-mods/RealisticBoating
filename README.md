@@ -2,7 +2,7 @@
 
 It's advised you don't download this script yet if you don't know  what you're doing. As it's a WIP - it may contain bugs and some features may not be fully functioning or implemented yet.
 
-I still need to optmize the code structure and move some functions to server side - so good things come to those who wait!
+I still need to optmize the code structure and move some functions to server side and define some variables to the local scope and not in their current form - so good things come to those who wait! I simply just made this available for anyone interested in contributing until it becomes a full release
 
 
 # RealisticBoating
