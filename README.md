@@ -17,7 +17,7 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 # Features
 
 - Boat Anchor
-- Realistic Water Conditions
+- Realistic Water Conditions (Can be adjusted easily in the config)
 - Sinking Boats when heavily damaged/submerged
 
 # Work In Progress Features
