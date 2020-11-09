@@ -25,6 +25,7 @@ I'm trying to keep much of this as standalone as possible. Therefore any third p
 - Boat & Trailer Purchase & Storage
 - Distress system
 - Hypothermia System Based on Time & Weather Conditions
+- Tidal system
 - Water based activites and jobs
 - Weather conditions affecting wave height and intensity
-- Tidal system
+
