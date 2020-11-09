@@ -15,7 +15,7 @@ Citizen.CreateThread(function()
         if vehicleClass == 14 or vehicleClass == 18 then -- Checks that the vehicle class is a boat, also checks if emergency vehicle - handy if you're using addon LEO boats etc
 
             if IsEntityInWater(vehicle) then -- Checks if vehicles in water. Prevents a bug were notification prompts are displayed in land vehicles
-			    if IsControlJustPressed(1, 74) and anchored == false then 
+			    if IsControlJustPressed(1, Config.KeyBind) and anchored == false then 
 				 -- Checks the current vehicle speed
 				 speed = GetVehicleDashboardSpeed(vehicle)
 				if speed < 6 then 
@@ -81,7 +81,7 @@ Citizen.CreateThread(function()
 				end 
             
 
-            elseif IsControlJustPressed(1, 74) and anchored == true then
+            elseif IsControlJustPressed(1, Config.KeyBind) and anchored == true then
 
 				print('Raising the anchor')
 			if Config.UsePNotify then
