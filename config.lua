@@ -1,5 +1,6 @@
 Config = {}
 
+Config.KeyBind = 74 -- Default is H
 Config.WaveIntensity = 2.25 -- Must be a float value between 1.0 & 3.0 - Set to 0 for default GTA waves
 Config.ImprovedWaterConditions = true
 Config.UsePNotify = true -- Set this to false if you're not using pNofity!
