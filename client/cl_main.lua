@@ -74,6 +74,9 @@ Citizen.CreateThread(function()
 					})
 								
 				end
+					 
+
+				Citizen.Wait(1)
 				
 				end 
             
@@ -114,7 +117,7 @@ Citizen.CreateThread(function()
                 SetBoatFrozenWhenAnchored(vehicle, false)
 
 
-                anchored = false
+                anchored = false -- Tells the script we've lifted the anchor and the next time the loop is ran to assume that the boat is not anchored
                 
             else 
 
