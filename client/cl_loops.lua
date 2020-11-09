@@ -7,7 +7,7 @@ CreateThread(function()
     -- More realistic waves. Set to false in the config if its not to your suiting
     if Config.ImprovedWaterConditions then 
 
-        WaterOverrideSetStrength(1.2)
+        WaterOverrideSetStrength(Config.WaterStrength)
 
     end 
     -- See the config to disable/enable. This is if you want to expand the GTA boundary and allow people to travel further out into the water
