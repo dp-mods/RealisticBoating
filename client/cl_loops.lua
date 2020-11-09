@@ -26,7 +26,7 @@ CreateThread(function()
         Wait(50)
     
 
-        if vehicleClass == 14 then -- Checks that the vehicle we are/were in is a boat 
+        if vehicleClass == 14 then -- Checks that the vehicle we are/were in is a boat. Prevents a bug that spams you with notifications when a vehicle becomes submerged
     if Config.SinkWhenSubmerged then -- Should be self explanatory to what this does 
     if submerged >= Config.SubmergmentRate then 
 
